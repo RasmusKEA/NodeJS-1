@@ -3,20 +3,15 @@ const app = express();
 app.use(express.json());
 
 const dankMemes = [
-    {id : 1,
-    topText: "Dank meme 1",
+    {topText: "Dank meme 1",
     bottomText: "Dank meme 1"},
-    {id : 2,
-    topText: "Dank meme 2",
+    {topText: "Dank meme 2",
     bottomText: "Dank meme 2"},
-    {id : 3,
-    topText: "Dank meme 3",
+    {topText: "Dank meme 3",
     bottomText: "Dank meme 3"},
-    {id : 4,
-    topText: "Dank meme 4",
+    {topText: "Dank meme 4",
     bottomText: "Dank meme 4"},
-    {id : 5,
-    topText: "Dank meme 5",
+    {topText: "Dank meme 5",
     bottomText: "Dank meme 5"}
 ]
 
