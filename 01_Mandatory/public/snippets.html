@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mandatory I</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/snippet.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <h1>Mandatory I</h1>
+            <div class="menu">
+                <a href="/">Home</a>
+                <a href="/terminal">Terminal Commands</a>
+                <a href="/snippets" class="is-active">Code snippets</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="code-div-1">
+        <a class="code-header"> To set up a Express server:</a>
+        <pre>
+            <code>
+    const express = require("express");
+    const app = express();
+    /*
+    *HTTP Request handling here
+    */
+    app.listen(8080)
+
+</code>
+        </pre>
+        <a>Here we grab the express framework and store it in a constant called <i>express</i>, <br> then we initialize
+            the express framework by storing it in another constant called <i>app</i>. <br>
+            We then makes our app-constant listen for activity on port number 8080</a>
+    </div>
+
+    <div class="code-container">
+        <div class="code-div-2">
+            <a class="code-header">To handle a GET request</a>
+            <pre>
+                <code>
+    app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/public/index.html")
+    })
+
+</code>
+            </pre>
+            <a>Here we handle a GET request. This means that when a client accesses localhost:8080/ we need to return
+                something. We use the default <i>get()</i> method from the Express framework to listen for this.
+                Once a client accesses the mentioned URL we return an 'index.html'-file. By using the <i>.sendFile()</i>
+                method we can send a file to our end user. </a>
+        </div>
+    </div>
+
+    <div class="code-container-1">
+        <div class="code-div-3">
+            <a class="code-header">To handle a POST request</a>
+            <pre>
+                <code>
+    app.post("/dankmemes", (req, res) =>{
+    const upperText = req.body.topText
+    const lowerText = req.body.bottomText
+                    
+    dankMemes.push({topText : upperText, bottomText : lowerText})
+                    
+    res.send({"succes" : true})
+    })
+                </code>
+            </pre>
+
+            <a>When your server receives a POST-request from an end user we need to take care of it. For this purpose
+                there is a built-in function called <i>post()</i>. This receives data from the end user and then we have
+                to
+                do something with it. In the example above, the server receives a dank meme from its user, and we
+                have to save this in our stack of existing dank memes. Once the dank meme has been added, a 'succes'
+                is sent back which can be used in the front end to tell the user that the dank meme has been
+                added</a>
+        </div>
+    </div>
+
+    <div class="code-container">
+        <div class="code-div-2">
+            <a class="code-header">To handle a DELETE request</a>
+            <pre>
+                <code>
+    app.delete("/dankmemes/:id", (req, res) =>{
+    dankMemes.splice(req.params.id-1,1)
+                    
+    res.send({"succes" : true})
+    })
+                </code>
+            </pre>
+            <a>If a user regrets his or hers dank meme creation it can be deleted by sending a DELETE request. With our
+                express server we can make use of the <i>.delete()</i> function, where we receive any identificer, in
+                this example it is an ID. We can then proceed to delete the dank meme in our stack with this ID and send
+                a succes back to the front end</a>
+        </div>
+    </div>
+
+    <div class="code-div-1">
+        <a class="code-header"> To handle UPDATE requests</a>
+        <pre>
+            <code>
+    app.put("/dankmemes/:id", (req, res) =>{
+    
+
+    if(the meme actually exists){
+        dankMemes[req.params.id-1] = {topText: req.body.topText,
+        bottomText: req.body.bottomText}
+                        
+        res.send({"succes" : true})
+    }else{
+        res.send({"succes" : false})
+        }
+    })
+
+    _____________
+
+    app.patch("/dankmemes/:id", (req, res) =>{
+
+        /*
+        *Check for changes to existing meme and apply these
+        */
+        res.send("succes" : true)
+    )}
+            </code>
+        </pre>
+        <a>If a user a typo or mistakenly sent a wrong meme we can handle update requests. These are called either put
+            or patch requests. A put request replaces all current representations of the target, which is the ID of a
+            meme in this example. This means that a PUT request will overwrite the existing meme at a specific ID. To
+            handle this, we can use the <i>.put()</i> method, where we in this example check that the meme exists and
+            overwrites the old one with the new data.
+            <br>
+            <br>
+            Did the user just make a type, the user can correct this typo by sending a PATCH request. In express we use
+            the same name method, <i>.patch()</i> which allows us to just correct where there's need for correction
+            instead of overwriting the entire dank meme.
+        </a>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

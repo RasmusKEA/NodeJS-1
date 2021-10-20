@@ -1,0 +1,53 @@
+.diag-cont{
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    margin-top: 80px;
+   }
+  .div1, .div2, .div3{
+    width: 33.33%;
+    height: 175px;
+    color: white;
+  }
+  .div1{
+    border: 3px solid var(--primary);
+    border-radius: 25px;
+  }
+  .div2{
+    margin-left: 33.2%;
+    border: 3px solid var(--primary);
+    border-radius: 25px;
+  }
+  .div3{
+    margin-left: 66.5%;;
+    border: 3px solid var(--primary);
+    border-radius: 25px;
+  }
+
+  .inner-text{
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.a-header {
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to right, var(--primary), var(--primary));
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 50% 2px;
+  transition: background-size .5s ease;
+  width: 30%;
+  
+}
+
+.inner-text:hover a:hover{
+    background-size: 100% 2px;
+}
+
+.ex-text{
+  font-size: 12px;
+  margin-top: 10px;
+}
