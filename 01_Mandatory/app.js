@@ -19,7 +19,7 @@ app.get("/snippets", (req, res) => {
     res.sendFile(__dirname + "/public/snippets.html")
 })
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 7070;
 
 const server = app.listen(PORT, (error) => {
     if (error) {

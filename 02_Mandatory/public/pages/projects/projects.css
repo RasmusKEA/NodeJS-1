@@ -1,0 +1,37 @@
+
+.container-1{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.projects-container{
+    margin-top: 25px;
+    width: 80%;
+    display: flex;
+}
+
+.projects-container.wrap{
+    flex-wrap: wrap;
+}
+
+.project-div{
+    width: 30%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    border: 2px solid var(--primary);
+    border-left: 3px solid var(--primary);
+    color: var(--light);
+    overflow: auto;
+}
+
+.project-div p{
+    margin-left: 10px;
+}
+
+.project-div h4{
+    margin-top: 10px;
+    margin-left: 10px;
+}
