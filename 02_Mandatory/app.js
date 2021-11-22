@@ -68,13 +68,13 @@ app.post('/login',(req,res) => {
 const projectsRouter = require("./routers/projects.js");
 const pagesRouter = require("./routers/pages.js")
 const contactRouter = require("./routers/contact.js");
-const adminRouter = require("./routers/admin.js")
+
 
 
 app.use(projectsRouter.router);
 app.use(pagesRouter.router);
 app.use(contactRouter.router);
-app.use(adminRouter.router);
+
 
 
 const { createPage } = require("./render.js");
