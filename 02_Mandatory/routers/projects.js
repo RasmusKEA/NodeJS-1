@@ -1,18 +1,31 @@
 const router = require("express").Router();
+const mysql = require("mysql")
 
-const projects = [
-    { name: "Node.js Recap", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] },
-    { name: "Node.js Recap", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] },
-    { name: "Node.js Recap", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] },
-    { name: "Node.js Recap", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] },
-    { name: "Node.js Recap", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] },
-    { name: "Node.js Recap", category: "Node.js", technologies: ["Node.js", "Html", "CSS"] }
-    
-];
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "user",
+    password: "password",
+    database: "nodefolio",
+    port: "3306"
+})
 
+connection.connect((err) => {
+    if(err){
+        throw err
+    }else{
+        console.log("connected")
+    }
+})
 
 router.get("/api/projects", (req, res) => {
-    res.send({ projects });
+
+    let sql = "SELECT * FROM projects"
+    connection.query(sql, function(err, result){
+        if(err){throw err} 
+        console.log(result[0].projectname)
+        res.send(result)
+        
+    })
 });
 
 

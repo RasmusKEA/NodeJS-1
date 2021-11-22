@@ -1,17 +1,17 @@
 fetch("/api/projects")
 .then(response => response.json())
-.then(({ projects }) => {
+.then((result) => {
     const projectsWrapperDiv = document.getElementById("projects-container wrap");
     console.log(projectsWrapperDiv);
 
-    projects.map(project => { 
+    result.map(result => { 
         const projectDiv = document.createElement("div");
         projectDiv.className = "project-div"
         projectDiv.innerHTML = `
-            <h4>${escapeHTML(project.name)}</h4>
-            <p>Category: ${escapeHTML(project.category)}</p>
-            <p>Technologies: ${escapeHTML(project.technologies.join(", "))}</p>
-            <p>Links: ....</p>
+            <h4>${escapeHTML(result.projectname)}</h4>
+            <p>Category: ${escapeHTML(result.category)}</p>
+            <p>Technologies: ${escapeHTML(result.techs)}</p>
+            <p>Link: <a href="https://${result.links}">${escapeHTML(result.links)}</a></p>
         `;
         
         projectsWrapperDiv.appendChild(projectDiv);
