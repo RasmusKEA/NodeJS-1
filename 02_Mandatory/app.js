@@ -69,13 +69,9 @@ const projectsRouter = require("./routers/projects.js");
 const pagesRouter = require("./routers/pages.js")
 const contactRouter = require("./routers/contact.js");
 
-
-
 app.use(projectsRouter.router);
 app.use(pagesRouter.router);
 app.use(contactRouter.router);
-
-
 
 const { createPage } = require("./render.js");
 const { urlencoded } = require("express");  
@@ -89,11 +85,12 @@ const projectsPage = createPage("projects/projects.html");
 const contactPage = createPage("contact/contact.html");
 const loginPage = createPage("login/login.html");
 const adminPage = createPage("admin/admin.html");
+const createProjectPage = createPage("create/create.html")
+const editProject = createPage("edit/edit.html")
 
 app.get("/", (req, res) => {
     res.send(frontpagePage);
 });
-
 
 app.get("/cv", (req, res) => {
     res.send(CVPage);
@@ -111,8 +108,6 @@ app.get('/openCV', function(req, res) {
     res.sendFile(__dirname + "/public/assets/CV.pdf");
 })
 
-
-
 app.get('/admin', function(req, res){
     session=req.session;
     if(session.userid){
@@ -122,6 +117,13 @@ app.get('/admin', function(req, res){
     }
 })
 
+app.get('/create', function(req, res){
+    res.send(createProjectPage)
+})
+
+app.get('/edit', function(req, res){
+    res.send(editProject)
+})
 
 const PORT = process.env.PORT || 8080;
 

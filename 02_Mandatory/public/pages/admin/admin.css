@@ -63,8 +63,14 @@
     box-shadow: none; 
 }
 
-.edit-button{
+.edit-button, .delete-button{
+    width: 75px;
     margin: auto;
     display: block;
     margin-bottom: 10px;
+}
+
+.create-button{
+    margin-top: 15px;
+    margin-left: 15px;
 }
