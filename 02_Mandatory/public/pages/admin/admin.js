@@ -27,6 +27,24 @@ fetch("/api/projects")
         projectDiv.append(editButton)
         projectDiv.append(deleteButton)
         projectsWrapperDiv.appendChild(projectDiv);
+
+        editButton.onclick = function (){
+            location.href = '/edit'
+            localStorage.setItem("editID", result.idprojects)
+        }
+
+        deleteButton.onclick = function(){
+            fetch(`/api/project/${result.idprojects}`, {
+                method: "DELETE"
+            }).then(response => {
+                if (response.status === 202) {
+                    console.log("Everything went well");
+                    window.location.href = '/admin'
+                } else {
+                    console.log("Delete succesful", response.status);
+                }
+            });
+        }
     });
 });
 
@@ -35,3 +53,5 @@ document.getElementById("create-button").addEventListener("click", createProject
 function createProject(){
     location.href = '/create'
 }
+
+

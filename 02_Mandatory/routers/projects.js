@@ -51,7 +51,7 @@ router.put("/api/project/:id", (req, res) => {
     })
 })
 
-router.post("/api/projects", (req, res) => {
+router.post("/api/project", (req, res) => {
     let sql = `INSERT INTO projects (projectname, category, techs, links) VALUES ('${req.body.projectname}', '${req.body.category}', '${req.body.techs}', '${req.body.links}')`
     connection.query(sql, function(err, result){
         if(err){throw err}

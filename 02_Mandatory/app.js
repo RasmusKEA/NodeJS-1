@@ -118,11 +118,19 @@ app.get('/admin', function(req, res){
 })
 
 app.get('/create', function(req, res){
-    res.send(createProjectPage)
+    if(session.userid){
+        res.send(createProjectPage)
+    }else{
+        res.redirect('/login')
+    }
 })
 
 app.get('/edit', function(req, res){
-    res.send(editProject)
+    if(session.userid){
+        res.send(editProject)
+    }else{
+        res.redirect('/login')
+    }
 })
 
 const PORT = process.env.PORT || 8080;
