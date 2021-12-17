@@ -1,0 +1,21 @@
+{
+  "name": "01_eksamen",
+  "version": "1.0.0",
+  "description": "NodeJS Eksamensprojekt",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Rasmus Møller",
+  "license": "MIT",
+  "dependencies": {
+    "alert": "^5.0.10",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "socket.io": "^4.4.0"
+  }
+}

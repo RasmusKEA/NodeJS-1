@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./pages/chat/chat.css">
+    <title>NodeChat</title>
+</head>
+
+<body>
+    <main>
+        <div class="chat-div">
+            <ul id="messages"></ul>
+            <form id="form" action="">
+                <input id="input" autocomplete="off" /><button>Send</button>
+            </form>
+        </div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/pages/chat/chat.js"></script>
+</body>
+
+</html>

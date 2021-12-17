@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: var(--light);
+    background-color: var(--dark);
+
+}
+
+:root{
+    --primary: #8c38ff;
+    --light: #EEEEEE;
+    --dark: #212121;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+}
+
+nav{
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: var(--dark);
+    padding: 16px 32px;
+    border-bottom: 3px solid var(--primary);
+}
+
+.title-head-h1 {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+}
+
+.menu {
+    display: flex;
+    flex: 1 1 0%;
+
+    background-color: var(--light);
+
+}
+
+.title-head{
+    color: var(--primary);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--primary);
+    margin: 0 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s ;
+    padding: 8px 16px;
+    border-radius: 99px;
+}
+
+.menu a.is-active, .menu a:hover {
+    color: var(--light);
+    background-color: var(--primary);
+}
+
+main {
+    background-color: var(--dark);
+    min-height: calc(100vh - 150px);
+}
